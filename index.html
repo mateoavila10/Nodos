@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Venta de Celulares Tucumán</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f9f9f9;
+        color: #333;
+      }
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #000102;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        z-index: 1000;
+      }
+      header img {
+        height: 40px;
+      }
+      header h1 {
+        font-size: 1.2rem;
+        margin: 0 15px 0 10px;
+        white-space: nowrap;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: bold;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      main {
+        padding-top: 80px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .hero {
+        background: url("https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80")
+          no-repeat center center/cover;
+        color: white;
+        text-align: center;
+        padding: 80px 20px;
+        border-radius: 0 0 15px 15px;
+        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+      }
+      .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+      .hero h2 {
+        font-weight: normal;
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+      }
+      .btn-whatsapp {
+        background-color: #25d366;
+        color: white;
+        font-weight: bold;
+        padding: 12px 25px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+      }
+      .btn-whatsapp:hover {
+        background-color: #1ebe57;
+      }
+      section {
+        background: white;
+        margin: 30px 15px;
+        padding: 25px 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      }
+      section h2 {
+        margin-top: 0;
+        color: #004aad;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+      .services ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      .services li {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+      }
+      .services li span {
+        font-size: 1.5rem;
+        margin-right: 12px;
+      }
+      footer {
+        background: #000102;
+        color: white;
+        text-align: center;
+        padding: 15px 10px;
+        font-size: 0.9rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      footer img {
+        height: 25px;
+      }
+      footer a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+      /* Simple form styles */
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 400px;
+      }
+      form input,
+      form textarea {
+        padding: 8px 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        resize: vertical;
+      }
+      form button {
+        background-color: #004aad;
+        color: white;
+        border: none;
+        padding: 12px;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      form button:hover {
+        background-color: #00337a;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div style="display: flex; align-items: center">
+        <img src="/image.png" alt="Logo Venta de Celulares Tucumán" />
+        <h1>Venta de Celulares Tucumán</h1>
+      </div>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-label="Sección principal">
+        <h1>Los mejores celulares al mejor precio en Tucumán</h1>
+        <h2>
+          Encontrá tu próximo smartphone con garantía y atención personalizada.
+        </h2>
+        <a
+          class="btn-whatsapp"
+          href="https://wa.me/5493813491683"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Escribinos por WhatsApp"
+          >👉 Escribinos por WhatsApp</a
+        >
+      </section>
+
+      <section class="about" aria-labelledby="quienes-somos">
+        <h2 id="quienes-somos">Quiénes somos</h2>
+        <p>
+          Somos una tienda local en Tucumán especializada en la venta de
+          celulares nuevos y usados, con atención personalizada y asesoramiento
+          para que elijas el equipo ideal para vos.
+        </p>
+      </section>
+
+      <section class="services" id="productos" aria-labelledby="que-ofrecemos">
+        <h2 id="que-ofrecemos">Nuestros productos</h2>
+        <ul>
+          <li>
+            <span>📱</span> Smartphones de las mejores marcas (Samsung, Apple,
+            Xiaomi)
+          </li>
+          <li><span>🔋</span> Accesorios originales y compatibles</li>
+          <li><span>💼</span> Equipos nuevos y usados con garantía</li>
+          <li><span>🚚</span> Envíos rápidos a toda la provincia</li>
+        </ul>
+      </section>
+
+      <section
+        class="contact"
+        id="contacto"
+        aria-labelledby="ponete-en-contacto">
+        <h2 id="ponete-en-contacto">Ponete en contacto</h2>
+        <p>Consultanos sin compromiso, respondemos en el día.</p>
+        <a
+          class="btn-whatsapp"
+          href="https://wa.me/5493813491683"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contactar por WhatsApp"
+          >Escribinos por WhatsApp</a
+        >
+        <p>Email: <a href="mailto:nodon8n@gmail.com">nodon8n@gmail.com</a></p>
+        <p>Ciudad/Provincia: Tucumán, Argentina</p>
+
+        <form action="#" method="post" aria-label="Formulario de contacto">
+          <input type="text" name="nombre" placeholder="Nombre" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <textarea
+            name="mensaje"
+            rows="4"
+            placeholder="Mensaje"
+            required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <img src="/image.png" alt="Logo Venta de Celulares Tucumán" />
+      <span
+        >© 2025 Venta de Celulares Tucumán – Todos los derechos reservados</span
+      >
+      <a
+        href="https://facebook.com/tuFanpage"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+        >Facebook</a
+      >
+      <a
+        href="https://instagram.com/tuInstagram"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        >Instagram</a
+      >
+    </footer>
+  </body>
+</html>
