@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useState, useEffect } from "react";
-import logo from "../assets/strivvo.ar.jpg"; // ✅ tu logo
+import logo from "../assets/Strivvo.ar.jpg"; 
 
 const Nav = styled(motion.nav)`
   background: rgba(0, 0, 0, 0.95);
