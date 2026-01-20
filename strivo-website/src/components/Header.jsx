@@ -1,24 +1,17 @@
-import styled from "styled-components";
-import { motion } from "framer-motion";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { useState, useEffect } from "react";
-import logo from "../assets/Strivo.ar.jpg"; 
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import './css/Header.css';
 
-const Nav = styled(motion.nav)`
-  background: rgba(0, 0, 0, 0.95);
-  padding: ${({ scrolled }) => (scrolled ? "0.5rem 2rem" : "1rem 2rem")};
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(15px);
-  box-shadow: ${({ scrolled }) =>
-    scrolled ? "0 2px 15px rgba(0, 0, 0, 0.4)" : "none"};
-  transition: all 0.3s ease-in-out;
-`;
+// ============================================
+// ÍCONOS SVG - Definidos acá para evitar errores
+// ============================================
+const MenuIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+);
 
 const CloseIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -33,6 +26,9 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
+// ============================================
+// COMPONENTE HEADER
+// ============================================
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -125,7 +121,6 @@ const Header = () => {
             href="#hero" 
             className="header-logo"
             onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}
-            
           >
             <span className="logo-text">STRIVO</span>
             <span className="logo-dot"></span>
@@ -155,7 +150,7 @@ const Header = () => {
           {/* CTA Buttons */}
           <div className="header-cta">
             <a 
-              href="https://wa.me/5493813538897?text=Hola!%20Me%20interesa%20saber%20más%20sobre%20sus%20servicios"
+              href="https://wa.me/5491112345678?text=Hola!%20Me%20interesa%20saber%20más%20sobre%20sus%20servicios"
               target="_blank"
               rel="noopener noreferrer"
               className="header-whatsapp"
@@ -226,7 +221,7 @@ const Header = () => {
 
               <div className="mobile-menu-cta">
                 <a 
-                  href="https://wa.me/5493813538897?text=Hola!%20Me%20interesa%20saber%20más%20sobre%20sus%20servicios"
+                  href="https://wa.me/5491112345678?text=Hola!%20Me%20interesa%20saber%20más%20sobre%20sus%20servicios"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mobile-whatsapp-btn"
