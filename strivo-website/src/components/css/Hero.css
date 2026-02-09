@@ -535,7 +535,28 @@
   );
   pointer-events: none;
 }
-
+/* Para el título principal */
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.05em; /* MUY IMPORTANTE - hace que se vea premium */
+  
+  /* Quitar el outline, poner fill sólido */
+  color: transparent;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    var(--color-accent-light) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  /* Opcional: agregar glow sutil */
+  filter: drop-shadow(0 0 30px rgba(35, 231, 11, 0.3));
+}
 /* ============================================
    RESPONSIVE
    ============================================ */

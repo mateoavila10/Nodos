@@ -1,4 +1,6 @@
-/* Header */
+/* ============================================
+   HEADER BASE STYLES
+   ============================================ */
 .header {
   position: fixed;
   top: 0;
@@ -6,7 +8,7 @@
   right: 0;
   z-index: 1000;
   padding: 1rem 0;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .header::before {
@@ -15,14 +17,14 @@
   inset: 0;
   background: transparent;
   backdrop-filter: blur(0px);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: -1;
 }
 
 .header.scrolled::before {
-  background: rgba(13, 15, 20, 0.9);
+  background: rgba(10, 10, 11, 0.9);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .header.scrolled {
@@ -30,47 +32,49 @@
 }
 
 .header-container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 }
 
-/* Logo */
-.header-logo {
+/* ============================================
+   LOGO STYLES - VERSIÓN PROFESIONAL
+   ============================================ */
+.nav-logo-container {
   display: flex;
   align-items: center;
-  gap: 4px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
   z-index: 10;
 }
 
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #23e70b 0%, #7fff00 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: 2px;
+.nav-logo-container:hover {
+  background: rgba(35, 231, 11, 0.05);
+  box-shadow: 0 0 20px rgba(35, 231, 11, 0.15);
+  transform: translateY(-1px);
 }
 
-.logo-dot {
-  width: 8px;
-  height: 8px;
-  background: #23e70b;
-  border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
+.nav-logo {
+  height: 55px !important;
+  width: auto;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: brightness(1);
+  display: block;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.8); }
+.nav-logo-container:hover .nav-logo {
+  filter: brightness(1.1);
 }
 
-/* Desktop Navigation */
+/* ============================================
+   DESKTOP NAVIGATION
+   ============================================ */
 .header-nav {
   display: flex;
   align-items: center;
@@ -79,17 +83,19 @@
 
 .nav-link {
   position: relative;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: color 0.3s ease;
+  letter-spacing: -0.01em;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border-radius: 8px;
 }
 
 .nav-link:hover {
   color: #fff;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .nav-link.active {
@@ -103,11 +109,14 @@
   transform: translateX(-50%);
   width: 20px;
   height: 3px;
-  background: #23e70b;
+  background: linear-gradient(90deg, #23e70b, #7fff00);
   border-radius: 2px;
+  box-shadow: 0 0 10px rgba(35, 231, 11, 0.5);
 }
 
-/* Header CTA */
+/* ============================================
+   CTA BUTTONS
+   ============================================ */
 .header-cta {
   display: flex;
   align-items: center;
@@ -118,19 +127,21 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   color: #25D366;
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 500;
+  letter-spacing: -0.01em;
   border: 1px solid rgba(37, 211, 102, 0.3);
   border-radius: 8px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .header-whatsapp:hover {
   background: rgba(37, 211, 102, 0.1);
   border-color: #25D366;
+  transform: translateY(-1px);
 }
 
 .header-whatsapp span {
@@ -140,22 +151,30 @@
 .header-btn {
   display: inline-flex;
   align-items: center;
-  padding: 0.6rem 1.5rem;
+  padding: 0.7rem 1.8rem;
   background: linear-gradient(135deg, #23e70b 0%, #1bc309 100%);
   color: #000;
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 600;
+  letter-spacing: -0.01em;
   border-radius: 8px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 2px 10px rgba(35, 231, 11, 0.2);
 }
 
 .header-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(35, 231, 11, 0.3);
+  box-shadow: 0 5px 20px rgba(35, 231, 11, 0.4);
 }
 
-/* Mobile Menu Button */
+.header-btn:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   MOBILE MENU BUTTON
+   ============================================ */
 .mobile-menu-btn {
   display: none;
   width: 44px;
@@ -167,50 +186,64 @@
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 10;
 }
 
 .mobile-menu-btn:hover {
   background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Mobile Overlay */
+.mobile-menu-btn:active {
+  transform: scale(0.95);
+}
+
+/* ============================================
+   MOBILE OVERLAY
+   ============================================ */
 .mobile-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
   z-index: 998;
 }
 
-/* Mobile Menu */
+/* ============================================
+   MOBILE MENU
+   ============================================ */
 .mobile-menu {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   width: 100%;
-  max-width: 320px;
+  max-width: 340px;
   background: linear-gradient(180deg, #1a1d28 0%, #0d0f14 100%);
   z-index: 999;
   display: flex;
   flex-direction: column;
   padding: 2rem;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
 }
 
 .mobile-menu-header {
+  display: flex;
+  align-items: center;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.mobile-menu-header .logo-text {
-  font-size: 1.75rem;
+.mobile-menu-header .nav-logo {
+  height: 32px;
 }
 
-/* Mobile Navigation */
+/* ============================================
+   MOBILE NAVIGATION
+   ============================================ */
 .mobile-nav {
   display: flex;
   flex-direction: column;
@@ -221,13 +254,14 @@
 .mobile-nav-link {
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 1.25rem;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 500;
+  letter-spacing: -0.01em;
   border-radius: 10px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .mobile-nav-link:hover,
@@ -240,7 +274,9 @@
   border-left: 3px solid #23e70b;
 }
 
-/* Mobile Menu CTA */
+/* ============================================
+   MOBILE MENU CTA
+   ============================================ */
 .mobile-menu-cta {
   display: flex;
   flex-direction: column;
@@ -262,12 +298,14 @@
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
+  letter-spacing: -0.01em;
   border-radius: 10px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .mobile-whatsapp-btn:hover {
   background: rgba(37, 211, 102, 0.2);
+  transform: translateY(-1px);
 }
 
 .mobile-cta-btn {
@@ -280,15 +318,20 @@
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 600;
+  letter-spacing: -0.01em;
   border-radius: 10px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 2px 10px rgba(35, 231, 11, 0.3);
 }
 
 .mobile-cta-btn:hover {
-  box-shadow: 0 5px 20px rgba(35, 231, 11, 0.3);
+  box-shadow: 0 5px 20px rgba(35, 231, 11, 0.5);
+  transform: translateY(-1px);
 }
 
-/* Mobile Menu Footer */
+/* ============================================
+   MOBILE MENU FOOTER
+   ============================================ */
 .mobile-menu-footer {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
@@ -300,9 +343,21 @@
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.8rem;
   margin: 0.25rem 0;
+  letter-spacing: -0.01em;
 }
 
-/* Responsive */
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Large Desktop */
+@media (min-width: 1100px) {
+  .header-whatsapp span {
+    display: inline;
+  }
+}
+
+/* Tablet */
 @media (max-width: 992px) {
   .header-nav {
     display: none;
@@ -311,11 +366,16 @@
   .header-whatsapp span {
     display: none;
   }
+
+  .nav-logo {
+    height: 32px;
+  }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .header-container {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 
   .header-cta {
@@ -325,18 +385,35 @@
   .mobile-menu-btn {
     display: flex;
   }
+
+  .nav-logo {
+    height: 30px;
+  }
+
+  .nav-logo-container {
+    padding: 0.4rem;
+  }
 }
 
+/* Small Mobile */
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 1rem;
+  }
+
+  .nav-logo {
+    height: 28px;
+  }
+
+  .mobile-menu {
+    max-width: 100%;
+  }
+}
+
+/* Hide mobile menu on desktop */
 @media (min-width: 769px) {
   .mobile-overlay,
   .mobile-menu {
     display: none !important;
-  }
-}
-
-/* Header whatsapp text visible on larger screens */
-@media (min-width: 1100px) {
-  .header-whatsapp span {
-    display: inline;
   }
 }
