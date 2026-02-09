@@ -4,7 +4,7 @@ export const GlobalStyles = createGlobalStyle`
   /* ============================================
      GOOGLE FONTS IMPORT
      ============================================ */
-  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
   /* ============================================
      CSS VARIABLES - DESIGN TOKENS
@@ -43,10 +43,9 @@ export const GlobalStyles = createGlobalStyle`
     --border-radius: 12px;
     
     /* === TYPOGRAPHY === */
-    --font-display: 'Syne', sans-serif;
+    --font-display: 'Clash Display', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
-    --font-accent: 'Playfair Display', serif;
     
     /* Font Sizes */
     --text-xs: clamp(0.7rem, 0.8vw, 0.75rem);
@@ -147,24 +146,39 @@ export const GlobalStyles = createGlobalStyle`
      ============================================ */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     color: var(--color-text-primary);
   }
 
-  h1 { font-size: var(--text-6xl); }
-  h2 { font-size: var(--text-5xl); }
-  h3 { font-size: var(--text-4xl); }
-  h4 { font-size: var(--text-3xl); }
-  h5 { font-size: var(--text-2xl); }
-  h6 { font-size: var(--text-xl); }
+  h1 { 
+    font-size: var(--text-6xl);
+    letter-spacing: -0.05em;
+  }
+  h2 { 
+    font-size: var(--text-5xl);
+    letter-spacing: -0.04em;
+  }
+  h3 { 
+    font-size: var(--text-4xl);
+  }
+  h4 { 
+    font-size: var(--text-3xl);
+  }
+  h5 { 
+    font-size: var(--text-2xl);
+  }
+  h6 { 
+    font-size: var(--text-xl);
+  }
 
   p {
     font-family: var(--font-body);
-    font-size: var(--text-base);
+    font-size: var(--text-lg);
     line-height: 1.7;
     color: var(--color-text-secondary);
+    max-width: 65ch;
   }
 
   a {
@@ -174,10 +188,41 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   button {
-    font-family: inherit;
+    font-family: var(--font-body);
+    font-weight: 500;
+    letter-spacing: -0.01em;
     cursor: pointer;
     border: none;
     background: none;
+    transition: all var(--transition-base);
+  }
+
+  /* ============================================
+     NAVBAR / LOGO STYLES
+     ============================================ */
+  .nav-logo {
+    height: 32px;
+    width: auto;
+    transition: all var(--transition-base);
+    filter: brightness(1);
+  }
+
+  .nav-logo:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+  }
+
+  .nav-logo-container {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+  }
+
+  .nav-logo-container:hover {
+    background: rgba(35, 231, 11, 0.05);
+    box-shadow: 0 0 20px rgba(35, 231, 11, 0.15);
   }
 
   /* ============================================
@@ -196,6 +241,25 @@ export const GlobalStyles = createGlobalStyle`
 
   .glow {
     box-shadow: var(--shadow-glow);
+  }
+
+  /* Hero Title Específico */
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    color: transparent;
+    background: linear-gradient(
+      135deg,
+      var(--color-accent) 0%,
+      var(--color-accent-light) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 30px rgba(35, 231, 11, 0.3));
   }
 
   /* ============================================
@@ -255,6 +319,15 @@ export const GlobalStyles = createGlobalStyle`
       --space-20: 3rem;
       --space-24: 4rem;
     }
+
+    p {
+      max-width: 100%;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 12vw, 4rem);
+      letter-spacing: -0.04em;
+    }
   }
 
   @media (max-width: 480px) {
@@ -262,6 +335,14 @@ export const GlobalStyles = createGlobalStyle`
       --space-8: 1.5rem;
       --space-12: 2rem;
       --space-16: 2rem;
+    }
+
+    .nav-logo {
+      height: 28px;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 10vw, 3rem);
     }
   }
 `;
